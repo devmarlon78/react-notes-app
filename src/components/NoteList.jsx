@@ -15,6 +15,21 @@ const NoteList = ({ notes }) => {
 						<h3 className="text-lg font-bold" >
 							{note.title}
 						</h3>
+						<p className="text-sm text-gray-600" >
+							<strong>
+								Category: 
+							</strong>
+							{note.category}
+						</p>
+						<p className="text-sm text-gray-600" >
+							<strong>
+								Priority: 
+							</strong>
+							{note.priority}
+						</p>
+						<p className="mt-2">
+							{note.description}
+						</p>
 					</div>
 				))
 			}
