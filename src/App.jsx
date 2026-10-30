@@ -12,7 +12,7 @@ const App = () => {
         📔 Notes App
       </h2>
       <NoteForm notes={notes} setNotes={setNotes} />
-      <NoteList />
+      <NoteList notes={notes}  />
     </div>
   )
 }
