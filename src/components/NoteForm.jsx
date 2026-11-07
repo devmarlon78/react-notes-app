@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TextInput from "./inputs/TextInput";
 
 const NoteForm = ({ notes, setNotes }) => {
 	const [formData, setFormData] = useState({
@@ -45,19 +46,8 @@ const NoteForm = ({ notes, setNotes }) => {
 			</button>
 			{
 				isFormVisible && (
-						<form className="mb-6" onSubmit={handleSubmit} >
-						<div className="mb-4">
-							<label htmlFor="title" className="block font-semibold">
-								Title
-							</label>
-							<input
-								name="title"
-								type="text" 
-								className="w-full p-2 border rounded-lg" 
-								value={formData.title} 
-								onChange={handleChange}
-							/>
-						</div>
+					<form className="mb-6" onSubmit={handleSubmit} >
+						<TextInput label="title" name="title"  value={formData.title} onChange={handleChange} required />
 
 						<div className="mb-4">
 							<label htmlFor="priority" className="block font-semibold">
