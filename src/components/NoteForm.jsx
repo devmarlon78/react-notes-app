@@ -50,22 +50,18 @@ const NoteForm = ({ notes, setNotes }) => {
 					<form className="mb-6" onSubmit={handleSubmit} >
 						<TextInput label="title" name="title"  value={formData.title} onChange={handleChange} required />
 
-						<div className="mb-4">
-							<label htmlFor="priority" className="block font-semibold">
-								Priority
-							</label>
-							<select 
-								name="priority"
-								type="text" 
-								className="w-full p-2 border rounded-lg" 
-								value={formData.priority} 
-								onChange={handleChange}
-							>
-								<option value="High" > 🔴 High </option>
-								<option value="Medium" >  🟢 Medium </option>
-								<option value="Low" >  🟡 Low </option>
-							</select>
-						</div>
+
+						<SelectInput
+							label="priority"
+							name="priority"
+							value={formData.priority}
+							onChange={handleChange}
+							options={[
+								{value: "High", context: "🔴 High"},
+								{value: "Medium", context: "🟢 Medium"},
+								{value: "Low", context: "🟡 Low"}
+							]}
+						/>
 
 						<SelectInput
 							label="category"

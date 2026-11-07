@@ -13,7 +13,7 @@ const SelectInput = ( { label, name, value, onChange, options } ) => {
 		>	
 			{options.length > 1 && (
 				options.map((option) => (
-					<option value={option.value} >  {option.context} </option>
+					<option key={option.value} value={option.value} >  {option.context} </option>
 				))
 			)}
 		</select>
